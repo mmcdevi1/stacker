@@ -1,0 +1,17 @@
+%body
+  %header#top.navbar.navbar-static-top{:role => "banner"}
+    .container
+      .navbar-header
+        %button.navbar-toggle.collapsed{"data-target" => ".bs-navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = link_to "Stacker", root_path, class: "navbar-brand"
+      %nav.collapse.navbar-collapse.bs-navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to "Register", register_path
+          %li
+            = link_to "Login", "login_path"
+           
