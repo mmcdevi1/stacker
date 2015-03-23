@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       flash[:success] = "Successfully registered with Stacker."
       redirect_to root_path
     else
+      flash[:danger] = "Fields can't be blank."
       render 'new'
     end
   end

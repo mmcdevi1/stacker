@@ -9,4 +9,13 @@ describe "Creating users" do
     click_button "Register"
     expect(page).to have_content("Successfully registered with Stacker.")
   end
+
+  it "does not create a user with invalid params" do 
+    visit register_path
+    fill_in "Username", with: "mmcdevi1"
+    fill_in "Email", with: ""
+    fill_in "Password", with: "password"
+    click_button "Register"
+    expect(page).to have_content("Fields can't be blank.")
+  end
 end
