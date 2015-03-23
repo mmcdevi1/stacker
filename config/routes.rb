@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   get 'register', to: "users#new"
   resources :users, only: [:create]
 
-  root to: "users#new"
+  root to: "static_pages#index"
 
 end
