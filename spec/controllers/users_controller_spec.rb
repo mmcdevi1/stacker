@@ -9,6 +9,8 @@ describe UsersController do
   end
 
   describe "POST create" do 
+    # let(:user_session) { Fabricate(:user) }
+
     context "with valid inputs" do 
       before do 
         post :create, user: Fabricate.attributes_for(:user)
@@ -20,6 +22,10 @@ describe UsersController do
 
       it "redirects to the root path" do 
         expect(response).to redirect_to root_path
+      end
+
+      it "sets the user session" do 
+        expect(session[:user_id]).to eq(User.first.id)
       end
     end
 

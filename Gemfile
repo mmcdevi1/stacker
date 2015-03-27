@@ -12,7 +12,6 @@ gem 'pg'
 gem 'faker'
 gem 'fabrication'
 gem 'turbolinks'
-gem 'jquery-turbolinks'
 gem 'nokogiri'
 gem 'bcrypt'
 

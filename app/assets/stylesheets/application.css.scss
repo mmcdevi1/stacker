@@ -35,3 +35,11 @@ header {
   border: 2px solid #d5d7d8;
   padding: 16px 12px;
 }
+.alert {
+  border-radius: 0px;
+  position: absolute;
+  top: 0;
+  width:100%;
+  z-index:1000;
+  text-align:center;
+}
