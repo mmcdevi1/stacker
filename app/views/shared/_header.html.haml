@@ -9,9 +9,11 @@
           %span.icon-bar
         = link_to "Stacker", root_path, class: "navbar-brand"
       %nav.collapse.navbar-collapse.bs-navbar-collapse
-        %ul.nav.navbar-nav.navbar-right
+        %ul.nav.navbar-nav
           - if signed_in?
             %li= link_to "Properties", buildings_path
+        %ul.nav.navbar-nav.navbar-right
+          - if signed_in?
             %li= link_to current_user.username, "#"
             %li= link_to "Logout", logout_path
           - else

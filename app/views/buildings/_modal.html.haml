@@ -1,0 +1,18 @@
+= form_for @building do |f|
+  #new-building-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} ×
+            %span.sr-only Close
+          %h4#myModalLabel.modal-title Create New Property
+        .modal-body
+          .form-group
+            = f.text_field :name, class: "form-control", placeholder: "Property Name"
+          .form-group
+            = f.text_field :total_floors, class: "form-control", placeholder: "Total Floors"
+          .form-group
+            = f.text_field :sf, class: "form-control", placeholder: "Square Footage"
+        .modal-footer
+          = f.submit "Create Property", class: "btn btn-primary"

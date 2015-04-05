@@ -3,6 +3,7 @@ class BuildingsController < ApplicationController
 
   def index
     @buildings = current_user.buildings.all
+    @building = current_user.buildings.new
   end
 
   def show
@@ -19,7 +20,7 @@ class BuildingsController < ApplicationController
     @building = current_user.buildings.new(buildings_params)
     if @building.save
       flash[:success] = "Property created."
-      redirect_to @building 
+      redirect_to :back
     else 
       render 'new'
     end
@@ -40,6 +41,6 @@ class BuildingsController < ApplicationController
   end
 
   def buildings_params
-    params.require(:building).permit(:name, :user_id, :floors, :sf)
+    params.require(:building).permit(:name, :user_id, :total_floors, :sf)
   end
 end

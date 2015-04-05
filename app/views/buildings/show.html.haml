@@ -1,3 +1,19 @@
 %h2= @building.name
-%p= "#{@building.floors} floors - #{@building.sf} SF"
+%p= "#{@building.total_floors} floors - #{@building.sf} SF"
 = link_to "Edit", edit_building_path(@building)
+- @building.floors.each do |floor|
+  .floor
+    = floor.tenant
+    = "#{floor.floor} floor"
+= form_for [@building, Floor.new] do |f|
+  .form-group
+    = f.label :tenant
+    = f.text_field :tenant, class: "form-control"
+  .form-group
+    = f.label :floor, "Floor number"
+    = f.text_field :floor, class: "form-control"
+  .form-group
+    = f.label :sf, "Square Footage"
+    = f.text_field :sf, class: "form-control"
+  .form-group
+    = f.submit "Submit", class: "btn btn-success"

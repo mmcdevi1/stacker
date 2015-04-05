@@ -1,0 +1,8 @@
+.buildings-header
+  .container
+    .row
+      .col-sm-6
+      .col-sm-6
+        .pull-right
+          = link_to "New Property", "#", class: "btn btn-success", data: { toggle: "modal", target: "#new-building-modal" }
+= render 'modal'

@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get 'logout', to: "sessions#destroy"
   resources :sessions, only: [:create]
 
-  resources :buildings
+  resources :buildings do 
+    resources :floors
+  end
 
   root to: "static_pages#index"
 

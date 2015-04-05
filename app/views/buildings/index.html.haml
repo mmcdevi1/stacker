@@ -1,5 +1,5 @@
-%ul
-  - @buildings.each do |building|
-    %li
+- @buildings.each do |building|
+  .panel
+    .panel-body
       = link_to building.name, building
       = link_to "Delete", building, method: :delete

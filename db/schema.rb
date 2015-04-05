@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327002301) do
+ActiveRecord::Schema.define(version: 20150405004235) do
 
   create_table "buildings", force: true do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.integer  "floors"
+    t.integer  "total_floors"
     t.integer  "sf"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "floors", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "building_id"
+    t.string   "tenant"
+    t.integer  "sf"
+    t.integer  "floor"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

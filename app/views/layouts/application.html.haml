@@ -9,5 +9,7 @@
   %body
     = render 'shared/header'
     = render 'shared/messages'
+    - if signed_in?
+      = render 'buildings/header'
     .container
       = yield
