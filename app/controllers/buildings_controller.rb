@@ -16,7 +16,7 @@ class BuildingsController < ApplicationController
   end
 
   def create
-    @building = current_user.buildings.new
+    @building = current_user.buildings.new(buildings_params)
     if @building.save
       flash[:success] = "Property created."
       redirect_to @building 
@@ -29,6 +29,9 @@ class BuildingsController < ApplicationController
   end
 
   def destroy
+    @building.destroy
+    redirect_to :back
+    flash[:success] = "Property deleted."
   end
 
   private

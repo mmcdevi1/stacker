@@ -1,2 +1,5 @@
-%h1 Buildings#index
-%p Find me in app/views/buildings/index.html.haml
+%ul
+  - @buildings.each do |building|
+    %li
+      = link_to building.name, building
+      = link_to "Delete", building, method: :delete

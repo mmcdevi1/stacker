@@ -1,2 +1,3 @@
-%h1 Buildings#show
-%p Find me in app/views/buildings/show.html.haml
+%h2= @building.name
+%p= "#{@building.floors} floors - #{@building.sf} SF"
+= link_to "Edit", edit_building_path(@building)
